@@ -1,0 +1,7 @@
+# Sample Docker Compose File to Spin up Nginx on 8443
+version: '2'
+services:
+  nginx:
+    build: .
+    ports:
+      - "8443:443"
