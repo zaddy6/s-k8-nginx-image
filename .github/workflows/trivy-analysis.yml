@@ -28,3 +28,14 @@ jobs:
         uses: github/codeql-action/upload-sarif@v1
         with:
           sarif_file: 'trivy-results.sarif'
+      - name: Docker Build & Push to Docker Hub
+        uses: opspresso/action-docker@master
+        with:
+          args: --docker
+        env:
+          USERNAME: ${{ secrets.DOCKER_USER }}
+          PASSWORD: ${{ secrets.DOCKER_PWD }}
+          DOCKERFILE: "Dockerfile"
+          IMAGE_NAME: "glasswallsolutions/k8-nginx"
+          TAG_NAME: "v0.0.1"
+          LATEST: "true"
