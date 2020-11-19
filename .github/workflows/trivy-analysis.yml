@@ -37,5 +37,5 @@ jobs:
           PASSWORD: ${{ secrets.DOCKER_PWD }}
           DOCKERFILE: "Dockerfile"
           IMAGE_NAME: "glasswallsolutions/k8-nginx"
-          TAG_NAME: "v0.0.1"
+          TAG_NAME: "v0.0.2"
           LATEST: "true"
